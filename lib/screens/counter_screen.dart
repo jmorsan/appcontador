@@ -36,22 +36,27 @@ int cont=0;
           ),
           ),
 
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-          floatingActionButton: FloatingActionButton(
-            child:Column(
-              children: const <Widget> [
-                Icon(Icons.add),
-                Icon(Icons.remove),
-              
-            ],
-            ),  
-              onPressed: () {
-              setState(() {
-                cont++;
-              });
+          //floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+              children:  [
+                FloatingActionButton(child: const Icon(Icons.add),
+                onPressed: (){
+                  setState(() {
+                    cont++;
+                  });
+                }),
 
-            },
-            
+                FloatingActionButton(child: const Icon(Icons.remove),
+                onPressed: (){
+                  setState(() {
+                    cont--;
+                    });
+                }),
+                
+              
+            ], 
             ),
     );
   }
